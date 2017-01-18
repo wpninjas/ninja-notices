@@ -79,8 +79,9 @@ final class NinjaNotices
         $atts = wp_parse_args( $atts, array() );
 
         $args = array(
-            'posts_per_page' => -1,
-            'post_type' => 'ninja_notices'
+            'nopaging' => true,
+            'post_type' => 'ninja_notices',
+            'post_status' => 'publish',
         );
         $output = '';
         foreach( get_posts( $args ) as $notice ){
